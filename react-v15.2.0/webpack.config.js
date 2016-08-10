@@ -1,5 +1,6 @@
 'use strict';
-require("babel-plugin-syntax-jsx")
+
+var webpack = require('webpack');
 
 var cache = {};
 var loaders = [
@@ -21,7 +22,6 @@ var extensions = [
 ];
 
 module.exports = [{
-	cache: cache,
 	module: {
 		loaders: loaders
 	},
@@ -32,15 +32,12 @@ module.exports = [{
 		path: './dist',
 		filename: '[name].js'
 	},
+	plugins: [
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': '"production"'
+		})
+	],
 	resolve: {
-		extensions: extensions,
-		root: [
-			__dirname,
-			__dirname + '/src'
-		],
-		alias: {
-			"react": __dirname+"/node_modules/react/dist/react.min.js",
-			"react-dom": __dirname+"/node_modules/react-dom/dist/react-dom.min.js"
-		}
+		extensions: extensions
 	}
 }];
