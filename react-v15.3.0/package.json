@@ -4,7 +4,7 @@
   "description": "React demo",
   "main": "index.js",
   "scripts": {
-    "build-dev": "webpack -w -d -c webpack.config.js",
+    "build-dev": "webpack --config webpack.config.dev.js",
     "build-prod": "webpack --config webpack.config.js",
     "start": "http-server -c-1 ."
   },
@@ -30,7 +30,7 @@
     "babel-core": "^6.3.15",
     "babel-loader": "^6.2.0",
     "jsx-loader": "^0.13.2",
-    "react": "15.2.0",
-    "react-dom": "15.2.0"
+    "react": "15.3.0",
+    "react-dom": "15.3.0"
   }
 }
