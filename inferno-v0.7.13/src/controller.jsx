@@ -34,6 +34,29 @@ var stopMeasure = function() {
     }
 }
 
+
+function Recurse({ n }) {
+    if (n <= 0) {
+        return null
+    }
+
+    return (
+        <div>
+            <b>hello</b>
+            <div>
+                <div>
+                    <div>
+                        <b><i>lol {'wat'} <span>cannot be</span></i></b>
+                        <Recurse n={n - 2} />
+                    </div>
+                </div>
+            </div>
+            <Recurse n={n - 1} />
+        </div>
+    )
+}
+
+
 export class Row extends Component {
     constructor(props) {
         super(props);
@@ -55,7 +78,9 @@ export class Row extends Component {
                 <a onClick={this.click}>{data.label}</a>
             </td>
             <td className="col-md-1"><a onClick={this.del}><span className="glyphicon glyphicon-remove"></span></a></td>
-            <td className="col-md-6"></td>
+            <td className="col-md-6">
+                <Recurse n={3} /> 
+            </td>
         </tr>);
     }
 }

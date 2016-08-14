@@ -6,6 +6,27 @@ var ReactDOM = require('react-dom');
 window.rowsUpdated = 0;
 window.rowsMounted = 0;
 
+function Recurse({ n }) {
+	if (n <= 0) {
+		return null
+	}
+
+	return (
+		<div>
+			<b>hello</b>
+			<div>
+				<div>
+					<div>
+						<b><i>lol {'wat'} <span>cannot be</span></i></b>
+						<Recurse n={n - 2} />
+					</div>
+				</div>
+			</div>
+			<Recurse n={n - 1} />
+		</div>
+	)
+}
+
 export class Row extends React.Component {
 	constructor(props) {
 		super(props);
@@ -37,7 +58,9 @@ export class Row extends React.Component {
 				<a onClick={this.onClick}>{data.label}</a>
 			</td>
 			<td className="col-md-1"><a onClick={this.onDelete}><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
-			<td className="col-md-6"></td>
+			<td className="col-md-6">
+				<Recurse n={3} /> 
+			</td>
 		</tr>);
 	}
 }
