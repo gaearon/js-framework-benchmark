@@ -12,10 +12,10 @@ function Recurse({ n }) {
 
 	return (
 		<div>
-			<b>hello</b>
-			<div>
-				<div>
-					<div>
+			<b>hello {n}</b>
+			<div className='wat'>
+				<div className='watx'>
+					<div className='watxx'>
 						<b><i>lol {'wat'} <span>cannot be</span></i></b>
 						<Recurse n={n - 2} />
 					</div>
@@ -54,6 +54,10 @@ export class Row extends React.Component {
 		return (
 			<tr className={styleClass}>
 				<td className="col-md-1">{data.id}</td>
+				<td className="col-md-4">{data.label}</td>
+				<td className="col-md-1">
+					<Recurse n={3} />
+				</td>
 			</tr>
 		);
 	}
