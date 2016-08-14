@@ -51,16 +51,11 @@ export class Row extends React.Component {
 
 	render() {
 		let {styleClass, onClick, onDelete, data} = this.props;
-		return (<tr className={styleClass}>
-			<td className="col-md-1">{data.id}</td>
-			<td className="col-md-4">
-				<a onClick={this.onClick}>{data.label}</a>
-			</td>
-			<td className="col-md-1"><a onClick={this.onDelete}><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
-			<td className="col-md-6">
-				<Recurse n={3} /> 
-			</td>
-		</tr>);
+		return (
+			<tr className={styleClass}>
+				<td className="col-md-1">{data.id}</td>
+			</tr>
+		);
 	}
 }
 

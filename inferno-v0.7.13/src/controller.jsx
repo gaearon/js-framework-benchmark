@@ -74,13 +74,6 @@ export class Row extends Component {
         let {styleClass, onClick, onDelete, data} = this.props;
         return (<tr className={styleClass}>
             <td className="col-md-1">{data.id}</td>
-            <td className="col-md-4">
-                <a onClick={this.click}>{data.label}</a>
-            </td>
-            <td className="col-md-1"><a onClick={this.del}><span className="glyphicon glyphicon-remove"></span></a></td>
-            <td className="col-md-6">
-                <Recurse n={3} /> 
-            </td>
         </tr>);
     }
 }
