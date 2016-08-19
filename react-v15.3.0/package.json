@@ -30,7 +30,7 @@
     "babel-core": "^6.3.15",
     "babel-loader": "^6.2.0",
     "jsx-loader": "^0.13.2",
-    "react": "15.3.0",
-    "react-dom": "15.3.0"
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
   }
 }
